@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'home.dart';
@@ -25,7 +26,14 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Posenet Demo"),
+          title: Text(
+            "Look and the camera and push it up!!!!",
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.white,
+              fontWeight: FontWeight.w600,
+            ),
+          )
         ),
         body: HomePage(cameras),
       ),

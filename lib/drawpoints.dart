@@ -48,6 +48,11 @@ class _KeyPointsState extends State<KeyPoints> {
     });
   }
 
+  void saveCount(){
+
+
+  }
+
   Future<void> _countingLogic(Map<String, List<double>> poses) async {
     if (poses != null) {
       if (poses['nose'][1] > upperRange) {
@@ -148,6 +153,82 @@ class _KeyPointsState extends State<KeyPoints> {
 //              progressColor: Colors.green,
 //            ),
             child: Padding(
+              padding: EdgeInsets.fromLTRB(200, 0, 0, 25),
+              child: Container(
+                height: 70,
+                width: 70,
+                child: FittedBox(
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.indigo,
+                    onPressed: saveCount,
+                    child: Text(
+                      'SAVE',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Align(
+            alignment: Alignment.center,
+//            child: LinearPercentIndicator(
+//              animation: true,
+//              lineHeight: 20.0,
+//              animationDuration: 500,
+//              animateFromLastPercent: true,
+//              percent: _counter,
+//              center: Text("${(_counter).toStringAsFixed(1)}"),
+//              linearStrokeCap: LinearStrokeCap.roundAll,
+//              progressColor: Colors.green,
+//            ),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 200, 25),
+              child: Container(
+                height: 70,
+                width: 70,
+                child: FittedBox(
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.indigo,
+                    onPressed: resetCounter,
+                    child: Text(
+                      'RESET',
+                      style: TextStyle(
+                          fontWeight: FontWeight.normal, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+          ),
+        ],
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Align(
+            alignment: Alignment.center,
+//            child: LinearPercentIndicator(
+//              animation: true,
+//              lineHeight: 20.0,
+//              animationDuration: 500,
+//              animateFromLastPercent: true,
+//              percent: _counter,
+//              center: Text("${(_counter).toStringAsFixed(1)}"),
+//              linearStrokeCap: LinearStrokeCap.roundAll,
+//              progressColor: Colors.green,
+//            ),
+            child: Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
               child: Container(
                 height: 100,
@@ -155,7 +236,7 @@ class _KeyPointsState extends State<KeyPoints> {
                 child: FittedBox(
                   child: FloatingActionButton(
                     backgroundColor: Colors.red,
-                    onPressed: resetCounter,
+                    //onPressed: resetCounter,
                     child: Text(
                       '${_counter.toString()}',
                       style: TextStyle(
@@ -165,6 +246,7 @@ class _KeyPointsState extends State<KeyPoints> {
                 ),
               ),
             ),
+
           ),
         ],
       ),
